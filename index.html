@@ -140,8 +140,8 @@
             gap: 14px;
         }
 
-        .btn-whatsapp { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
         .btn-phone { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
+        .btn-whatsapp { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
         .btn-gps { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
         .btn-instagram { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .btn-facebook { background: linear-gradient(135deg, #1877F2 0%, #0b5ed7 100%); }
@@ -184,7 +184,7 @@
             color: #0284c7;
             font-weight: 700;
             font-size: 15px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .service-header i {
@@ -195,8 +195,20 @@
         .service-desc {
             font-size: 13px;
             color: #64748b;
-            line-height: 1.4;
+            line-height: 1.5;
             padding-left: 30px;
+        }
+
+        .route-flow {
+            display: inline-block;
+            margin-top: 10px;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
         }
 
         /* Tags de Animais */
@@ -266,18 +278,18 @@
 
         <!-- Links Principais -->
         <div class="links-grid">
-            <a href="https://wa.me/351961112056" class="btn-link btn-whatsapp" target="_blank">
+            <a href="tel:961112056" class="btn-link btn-phone">
                 <div class="btn-content">
-                    <i class="fa-brands fa-whatsapp fa-xl"></i>
-                    <span>Contactar no WhatsApp</span>
+                    <i class="fa-solid fa-phone fa-xl"></i>
+                    <span>Ligar por telefone</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
 
-            <a href="tel:961112056" class="btn-link btn-phone">
+            <a href="https://wa.me/351961112056" class="btn-link btn-whatsapp" target="_blank">
                 <div class="btn-content">
-                    <i class="fa-solid fa-phone fa-xl"></i>
-                    <span>Ligar por Telefone</span>
+                    <i class="fa-brands fa-whatsapp fa-xl"></i>
+                    <span>Mensagem WhatsApp</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
@@ -285,7 +297,7 @@
             <a href="https://maps.app.goo.gl/FLBvxBZRebUCZdQp7" class="btn-link btn-gps" target="_blank">
                 <div class="btn-content">
                     <i class="fa-solid fa-location-dot fa-xl"></i>
-                    <span>Ver no GPS (Google Maps)</span>
+                    <span>Ver direções de (GPS - Google Maps)</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
@@ -293,7 +305,7 @@
             <a href="https://www.instagram.com/pata.brilhante?stkn=a3dxejFnaWZ2dWQ=" class="btn-link btn-instagram" target="_blank">
                 <div class="btn-content">
                     <i class="fa-brands fa-instagram fa-xl"></i>
-                    <span>Siga-nos no Instagram</span>
+                    <span>Página do Instagram</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
@@ -319,7 +331,7 @@
                     <span>Banhos e Tosquias</span>
                 </div>
                 <div class="service-desc">
-                    Higiene e estética animal com profissionais dedicados.
+                    Higiene, cuidado e estética para o seu animal, com todo o conforto e dedicação.
                 </div>
             </div>
 
@@ -329,7 +341,8 @@
                     <span>Pet Táxi</span>
                 </div>
                 <div class="service-desc">
-                    Serviço de transporte cómodo e seguro para o seu patudo.
+                    Recolhemos o seu animal em casa, levamo-lo à loja para o serviço e entregamo-lo novamente em casa.
+                    <div class="route-flow">Casa &rarr; Loja &rarr; Serviço &rarr; Casa</div>
                 </div>
             </div>
 
@@ -339,7 +352,7 @@
                     <span>Entregas ao Domicílio</span>
                 </div>
                 <div class="service-desc">
-                    Receba ração e acessórios diretamente à sua porta.
+                    Encomende os seus produtos e receba-os comodamente em casa.
                 </div>
             </div>
 
@@ -349,7 +362,7 @@
                     <span>Rações e Acessórios</span>
                 </div>
                 <div class="service-desc">
-                    Alimentação especializada, brinquedos e produtos de cuidado.
+                    Rações, brinquedos, acessórios e produtos para o bem-estar do seu animal.
                 </div>
             </div>
         </div>
