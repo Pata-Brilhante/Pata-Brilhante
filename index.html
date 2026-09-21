@@ -146,11 +146,11 @@
         .btn-instagram { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .btn-facebook { background: linear-gradient(135deg, #1877F2 0%, #0b5ed7 100%); }
 
-        /* Secção de Serviços */
+        /* Secções (Títulos) */
         .section-title {
             font-size: 18px;
             color: #0369a1;
-            margin-bottom: 16px;
+            margin: 24px 0 16px 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -158,6 +158,7 @@
             font-weight: 800;
         }
 
+        /* Serviços */
         .services-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -211,9 +212,64 @@
             letter-spacing: 0.3px;
         }
 
+        /* Avaliações */
+        .reviews-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .review-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 16px;
+            text-align: left;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .review-text {
+            font-size: 13px;
+            color: #475569;
+            font-style: italic;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .review-author {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .btn-review {
+            display: inline-block;
+            margin-top: 8px;
+            background: #ffffff;
+            color: #0369a1;
+            border: 2px solid #0369a1;
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-review:hover {
+            background: #0369a1;
+            color: #ffffff;
+        }
+
         /* Tags de Animais */
         .animals-box {
-            margin-top: 18px;
+            margin-top: 24px;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             border: 1px dashed #38bdf8;
             padding: 12px;
@@ -365,6 +421,35 @@
                     Rações, brinquedos, acessórios e produtos para o bem-estar do seu animal.
                 </div>
             </div>
+        </div>
+
+        <!-- Avaliações de Clientes -->
+        <div class="section-title">
+            <i class="fa-solid fa-star"></i> Opiniões dos Clientes
+        </div>
+        
+        <div class="reviews-container">
+            <!-- Pode editar os textos das avaliações abaixo -->
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Serviço 5 estrelas! O meu cão veio super cheiroso e feliz. Nota-se que trabalham com muito amor aos animais."</p>
+                <p class="review-author">- Maria Silva</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"O serviço de Pet Táxi ajudou-me imenso pois não tinha como o levar. Recomendo muito!"</p>
+                <p class="review-author">- João Pedro</p>
+            </div>
+
+            <!-- Botão para o Google -->
+            <a href="https://maps.app.goo.gl/FLBvxBZRebUCZdQp7" class="btn-review" target="_blank">
+                <i class="fa-brands fa-google"></i> Ler mais e Avaliar
+            </a>
         </div>
 
         <!-- Tags dos Animais -->
