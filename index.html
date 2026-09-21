@@ -3,82 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pata Brilhante - Petshop</title>
+    <title>Pata Brilhante - Petshop em Joane</title>
+    <!-- Meta tags para redes sociais -->
+    <meta property="og:title" content="Pata Brilhante - Petshop">
+    <meta property="og:description" content="Tudo o que o seu melhor amigo precisa, num só lugar! Banhos, tosquias, rações, entregas e Pet Táxi em Joane.">
+    <meta property="og:type" content="website">
+    
     <!-- FontAwesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background: linear-gradient(180deg, #e0f2fe 0%, #f8fafc 100%);
-            color: #1e293b;
+            background: linear-gradient(180deg, #e0f2fe 0%, #f1f5f9 100%);
+            color: #0f172a;
             display: flex;
             justify-content: center;
-            padding: 20px 12px;
+            padding: 24px 12px;
             min-height: 100vh;
         }
 
         .container {
             width: 100%;
-            max-width: 420px;
+            max-width: 440px;
             background: #ffffff;
-            border-radius: 28px;
-            box-shadow: 0 20px 30px -10px rgba(0, 119, 182, 0.15);
-            padding: 28px 20px;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.15);
+            padding: 28px 22px;
             text-align: center;
+            position: relative;
         }
 
-        /* Área do Logótipo */
+        /* Logótipo */
+        .logo-wrapper {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 16px auto;
+        }
+
         .logo-container {
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 12px auto;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             background: #ffffff;
-            padding: 6px;
-            box-shadow: 0 10px 25px rgba(0, 119, 182, 0.18);
+            padding: 5px;
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
             border: 3px solid #38bdf8;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.03);
         }
 
         .logo-img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             border-radius: 50%;
         }
 
+        /* Títulos e Slogan */
         .brand-title {
             color: #0369a1;
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .badge-petshop {
             display: inline-block;
             background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
             color: #ffffff;
-            padding: 4px 16px;
+            padding: 5px 18px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            box-shadow: 0 3px 8px rgba(249, 115, 22, 0.3);
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
         }
 
         .slogan {
             font-size: 14px;
             color: #0284c7;
-            margin: 14px 0 22px 0;
+            margin: 16px 0 24px 0;
             font-style: italic;
             font-weight: 600;
+            line-height: 1.4;
         }
 
         /* Botões dos Links */
@@ -86,89 +108,136 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-bottom: 28px;
+            margin-bottom: 30px;
         }
 
         .btn-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 18px;
-            border-radius: 16px;
+            padding: 15px 20px;
+            border-radius: 18px;
             text-decoration: none;
             color: #ffffff;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 15px;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .btn-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
         }
 
         .btn-link:active {
             transform: scale(0.98);
         }
 
-        .btn-link .btn-content {
+        .btn-content {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
         .btn-whatsapp { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
+        .btn-phone { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
         .btn-gps { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
         .btn-instagram { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .btn-facebook { background: linear-gradient(135deg, #1877F2 0%, #0b5ed7 100%); }
 
-        /* Bloco de Serviços */
+        /* Secção de Serviços */
         .section-title {
             font-size: 18px;
             color: #0369a1;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .services-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
             text-align: left;
         }
 
-        .service-box {
+        .service-card {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 12px 14px;
+            border-radius: 16px;
+            padding: 14px 16px;
+            transition: border-color 0.2s ease;
+        }
+
+        .service-card:hover {
+            border-color: #7dd3fc;
         }
 
         .service-header {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             color: #0284c7;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 15px;
             margin-bottom: 4px;
         }
 
-        .service-desc {
-            font-size: 12px;
-            color: #64748b;
-            line-height: 1.4;
+        .service-header i {
+            width: 20px;
+            text-align: center;
         }
 
-        .animals-tag {
-            margin-top: 14px;
-            background: #f0f9ff;
-            border: 1px dashed #7dd3fc;
-            padding: 10px;
-            border-radius: 12px;
-            font-size: 12px;
+        .service-desc {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.4;
+            padding-left: 30px;
+        }
+
+        /* Tags de Animais */
+        .animals-box {
+            margin-top: 18px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px dashed #38bdf8;
+            padding: 12px;
+            border-radius: 16px;
+            font-size: 13px;
             color: #0369a1;
-            font-weight: 600;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        /* Bloco de Informações Rápidas */
+        .info-card {
+            margin-top: 24px;
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 16px;
+            font-size: 13px;
+            color: #475569;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item i {
+            color: #f97316;
+            margin-top: 3px;
         }
 
         /* Rodapé */
@@ -177,26 +246,18 @@
             padding-top: 16px;
             border-top: 1px solid #f1f5f9;
             font-size: 12px;
-            color: #64748b;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .footer p {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
+            color: #94a3b8;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Logótipo Oficial Embutido -->
-        <div class="logo-container">
-            <img class="logo-img" src="https://i.ibb.co/LhbKq66/pata-brilhante-logo.jpg" alt="Pata Brilhante Petshop" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%230284c7\'/><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'40\'>🐾</text></svg>'">
+        <!-- Logótipo Oficial -->
+        <div class="logo-wrapper">
+            <div class="logo-container">
+                <img class="logo-img" src="Screenshot_2026-09-04-09-46-03-398_com.canva.editor.jpg" alt="Pata Brilhante Petshop">
+            </div>
         </div>
 
         <h1 class="brand-title">Pata Brilhante</h1>
@@ -213,10 +274,18 @@
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
 
+            <a href="tel:961112056" class="btn-link btn-phone">
+                <div class="btn-content">
+                    <i class="fa-solid fa-phone fa-xl"></i>
+                    <span>Ligar por Telefone</span>
+                </div>
+                <i class="fa-solid fa-chevron-right fa-sm"></i>
+            </a>
+
             <a href="https://maps.app.goo.gl/FLBvxBZRebUCZdQp7" class="btn-link btn-gps" target="_blank">
                 <div class="btn-content">
                     <i class="fa-solid fa-location-dot fa-xl"></i>
-                    <span>Localização no GPS</span>
+                    <span>Ver no GPS (Google Maps)</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
@@ -224,7 +293,7 @@
             <a href="https://www.instagram.com/pata.brilhante?stkn=a3dxejFnaWZ2dWQ=" class="btn-link btn-instagram" target="_blank">
                 <div class="btn-content">
                     <i class="fa-brands fa-instagram fa-xl"></i>
-                    <span>Ver fotos no Instagram</span>
+                    <span>Siga-nos no Instagram</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
@@ -232,64 +301,85 @@
             <a href="https://www.facebook.com/share/19FGqEpSVN/" class="btn-link btn-facebook" target="_blank">
                 <div class="btn-content">
                     <i class="fa-brands fa-facebook fa-xl"></i>
-                    <span>Seguir no Facebook</span>
+                    <span>Página do Facebook</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
         </div>
 
-        <!-- Serviços -->
+        <!-- Os Nossos Serviços -->
         <div class="section-title">
-            <i class="fa-solid fa-star"></i> Os Nossos Serviços
+            <i class="fa-solid fa-paw"></i> Os Nossos Serviços
         </div>
 
         <div class="services-container">
-            <div class="service-box">
+            <div class="service-card">
                 <div class="service-header">
-                    <i class="fa-solid fa-shower"></i> Banhos e Tosquias
+                    <i class="fa-solid fa-shower"></i>
+                    <span>Banhos e Tosquias</span>
                 </div>
                 <div class="service-desc">
-                    Higiene e beleza com carinho e dedicação. Marcações por telefone ou WhatsApp.
+                    Higiene e estética animal com profissionais dedicados.
                 </div>
             </div>
 
-            <div class="service-box">
+            <div class="service-card">
                 <div class="service-header">
-                    <i class="fa-solid fa-car"></i> Pet Táxi
+                    <i class="fa-solid fa-car"></i>
+                    <span>Pet Táxi</span>
                 </div>
                 <div class="service-desc">
-                    Transporte seguro e confortável para o seu patudo chegar ao destino em segurança.
+                    Serviço de transporte cómodo e seguro para o seu patudo.
                 </div>
             </div>
 
-            <div class="service-box">
+            <div class="service-card">
                 <div class="service-header">
-                    <i class="fa-solid fa-house"></i> Entregas ao Domicílio
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <span>Entregas ao Domicílio</span>
                 </div>
                 <div class="service-desc">
-                    Receba os produtos e ração no conforto de sua casa.
+                    Receba ração e acessórios diretamente à sua porta.
                 </div>
             </div>
 
-            <div class="service-box">
+            <div class="service-card">
                 <div class="service-header">
-                    <i class="fa-solid fa-bowl-food"></i> Rações e Produtos
+                    <i class="fa-solid fa-bowl-food"></i>
+                    <span>Rações e Acessórios</span>
                 </div>
                 <div class="service-desc">
-                    Alimentação, acessórios e brinquedos das melhores marcas.
+                    Alimentação especializada, brinquedos e produtos de cuidado.
                 </div>
             </div>
         </div>
 
-        <div class="animals-tag">
-            🐶 Cães • 🐱 Gatos • 🐟 Peixes • 🐢 Tartarugas • 🦜 Aves • 🐹 Roedores
+        <!-- Tags dos Animais -->
+        <div class="animals-box">
+            🐶 Cães • 🐱 Gatos • 🐟 Peixes<br>🐢 Tartarugas • 🦜 Aves • 🐹 Roedores
         </div>
 
-        <!-- Contactos finais -->
+        <!-- Informações e Localização -->
+        <div class="info-card">
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <strong>Morada:</strong><br>
+                    Largo Zeca Afonso 147, Loja 7, Joane
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <strong>Email:</strong><br>
+                    patabrilhante.joane@gmail.com
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
         <div class="footer">
-            <p><i class="fa-solid fa-location-pin"></i> Largo Zeca Afonso 147, Loja 7, Joane</p>
-            <p><i class="fa-solid fa-envelope"></i> patabrilhante.joane@gmail.com</p>
-            <p><i class="fa-solid fa-phone"></i> 961 112 056</p>
+            <p>© 2026 Pata Brilhante Petshop. Todos os direitos reservados.</p>
         </div>
     </div>
 
