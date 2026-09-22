@@ -103,7 +103,7 @@
             line-height: 1.4;
         }
 
-        /* Botões dos Links */
+        /* Botões dos Links e Divisores */
         .links-grid {
             display: flex;
             flex-direction: column;
@@ -145,6 +145,14 @@
         .btn-gps { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
         .btn-instagram { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .btn-facebook { background: linear-gradient(135deg, #1877F2 0%, #0b5ed7 100%); }
+        .btn-google-review { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+
+        /* Divisor elegante entre grupos de botões */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+            margin: 4px 0;
+        }
 
         /* Secções (Títulos) */
         .section-title {
@@ -248,25 +256,6 @@
             color: #0f172a;
         }
 
-        .btn-review {
-            display: inline-block;
-            margin-top: 8px;
-            background: #ffffff;
-            color: #0369a1;
-            border: 2px solid #0369a1;
-            padding: 10px 16px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-review:hover {
-            background: #0369a1;
-            color: #ffffff;
-        }
-
         /* Tags de Animais */
         .animals-box {
             margin-top: 24px;
@@ -332,8 +321,9 @@
         <span class="badge-petshop">Petshop</span>
         <p class="slogan">"Tudo o que o seu melhor amigo precisa, num só lugar!"</p>
 
-        <!-- Links Principais -->
+        <!-- Links Principais com Divisores Visuais -->
         <div class="links-grid">
+            <!-- Grupo 1: Contactos -->
             <a href="tel:961112056" class="btn-link btn-phone">
                 <div class="btn-content">
                     <i class="fa-solid fa-phone fa-xl"></i>
@@ -350,14 +340,20 @@
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
 
+            <div class="divider"></div>
+
+            <!-- Grupo 2: Direções -->
             <a href="https://maps.app.goo.gl/FLBvxBZRebUCZdQp7" class="btn-link btn-gps" target="_blank">
                 <div class="btn-content">
                     <i class="fa-solid fa-location-dot fa-xl"></i>
-                    <span>Ver Direções ( Google Maps)</span>
+                    <span>Ver Direções (Google Maps)</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
 
+            <div class="divider"></div>
+
+            <!-- Grupo 3: Redes Sociais -->
             <a href="https://www.instagram.com/pata.brilhante?stkn=a3dxejFnaWZ2dWQ=" class="btn-link btn-instagram" target="_blank">
                 <div class="btn-content">
                     <i class="fa-brands fa-instagram fa-xl"></i>
@@ -373,6 +369,19 @@
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
+
+            <div class="divider"></div>
+
+            <!-- Grupo 4: Avaliações -->
+            <a href="https://g.page/r/CeD5w986wA-zEBM/review" class="btn-link btn-google-review" target="_blank">
+                <div class="btn-content">
+                    <i class="fa-solid fa-star fa-xl"></i>
+                    <span>Deixar Avaliação no Google</span>
+                </div>
+                <i class="fa-solid fa-chevron-right fa-sm"></i>
+            </a>
+
+            <div class="divider"></div>
         </div>
 
         <!-- Os Nossos Serviços -->
@@ -429,7 +438,6 @@
         </div>
         
         <div class="reviews-container">
-            <!-- Pode editar os textos das avaliações abaixo -->
             <div class="review-card">
                 <div class="stars">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -445,11 +453,6 @@
                 <p class="review-text">"O serviço de Pet Táxi ajudou-me imenso pois não tinha como o levar. Recomendo muito!"</p>
                 <p class="review-author">- João Pedro</p>
             </div>
-
-            <!-- Botão para o Google -->
-            <a href="https://maps.app.goo.gl/FLBvxBZRebUCZdQp7" class="btn-review" target="_blank">
-                <i class="fa-brands fa-google"></i> Ler mais e Avaliar
-            </a>
         </div>
 
         <!-- Tags dos Animais -->
