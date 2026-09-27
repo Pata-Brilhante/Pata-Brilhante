@@ -2,8 +2,9 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Pata Brilhante - Petshop em Joane</title>
+    
     <!-- Meta tags para redes sociais -->
     <meta property="og:title" content="Pata Brilhante - Petshop">
     <meta property="og:description" content="Tudo o que o seu melhor amigo precisa, num só lugar! Banhos, tosquias, rações, entregas e Pet Táxi em Joane.">
@@ -26,25 +27,47 @@
             color: #0f172a;
             display: flex;
             justify-content: center;
-            padding: 24px 12px;
+            padding: 20px 12px;
             min-height: 100vh;
+            min-height: 100dvh;
+        }
+
+        /* Banner para utilizadores do Instagram no iPhone */
+        #ig-browser-banner {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0f172a;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            z-index: 999999;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        #ig-browser-banner strong {
+            color: #f97316;
         }
 
         .container {
             width: 100%;
             max-width: 440px;
             background: #ffffff;
-            border-radius: 32px;
-            box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.15);
-            padding: 28px 22px;
+            border-radius: 28px;
+            box-shadow: 0 15px 35px -10px rgba(2, 132, 199, 0.15);
+            padding: 24px 18px;
             text-align: center;
         }
 
         /* Logótipo */
         .logo-wrapper {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 16px auto;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 14px auto;
         }
 
         .logo-container {
@@ -52,15 +75,10 @@
             height: 100%;
             border-radius: 50%;
             background: #ffffff;
-            padding: 5px;
-            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
+            padding: 4px;
+            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.18);
             border: 3px solid #38bdf8;
             overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-container:hover {
-            transform: scale(1.03);
         }
 
         .logo-img {
@@ -73,29 +91,29 @@
         /* Títulos e Slogan */
         .brand-title {
             color: #0369a1;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .badge-petshop {
             display: inline-block;
             background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
             color: #ffffff;
-            padding: 5px 18px;
+            padding: 4px 16px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.25);
         }
 
         .slogan {
-            font-size: 14px;
+            font-size: 13px;
             color: #0284c7;
-            margin: 16px 0 24px 0;
+            margin: 14px 0 20px 0;
             font-style: italic;
             font-weight: 600;
             line-height: 1.4;
@@ -105,27 +123,22 @@
         .links-grid {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-bottom: 30px;
+            gap: 10px;
+            margin-bottom: 24px;
         }
 
         .btn-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 15px 20px;
-            border-radius: 18px;
+            padding: 14px 18px;
+            border-radius: 16px;
             text-decoration: none;
             color: #ffffff;
             font-weight: 700;
-            font-size: 15px;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        }
-
-        .btn-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+            font-size: 14px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.15s ease;
         }
 
         .btn-link:active {
@@ -135,7 +148,7 @@
         .btn-content {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
 
         .btn-phone { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
@@ -149,14 +162,14 @@
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
-            margin: 4px 0;
+            margin: 2px 0;
         }
 
         /* Títulos de Secção */
         .section-title {
-            font-size: 18px;
+            font-size: 16px;
             color: #0369a1;
-            margin: 24px 0 16px 0;
+            margin: 20px 0 14px 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -168,20 +181,15 @@
         .services-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             text-align: left;
         }
 
         .service-card {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 14px 16px;
-            transition: border-color 0.2s ease;
-        }
-
-        .service-card:hover {
-            border-color: #7dd3fc;
+            border-radius: 14px;
+            padding: 12px 14px;
         }
 
         .service-header {
@@ -190,90 +198,89 @@
             gap: 10px;
             color: #0284c7;
             font-weight: 700;
-            font-size: 15px;
-            margin-bottom: 6px;
+            font-size: 14px;
+            margin-bottom: 4px;
         }
 
         .service-header i {
-            width: 20px;
+            width: 18px;
             text-align: center;
         }
 
         .service-desc {
-            font-size: 13px;
+            font-size: 12px;
             color: #64748b;
-            line-height: 1.5;
-            padding-left: 30px;
+            line-height: 1.4;
+            padding-left: 28px;
         }
 
         .route-flow {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 8px;
             background: #e0f2fe;
             color: #0369a1;
-            padding: 6px 12px;
-            border-radius: 10px;
-            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: 0.3px;
         }
 
         /* Destaque de Animais Atendidos */
         .animals-box {
-            margin-top: 24px;
+            margin-top: 20px;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             border: 1px dashed #38bdf8;
-            padding: 12px;
-            border-radius: 16px;
-            font-size: 13px;
+            padding: 10px;
+            border-radius: 14px;
+            font-size: 12px;
             color: #0369a1;
             font-weight: 700;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         /* Cartões de Avaliações */
         .reviews-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .review-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 16px;
+            border-radius: 14px;
+            padding: 14px;
             text-align: left;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
         }
 
         .stars {
             color: #fbbf24;
-            font-size: 14px;
-            margin-bottom: 8px;
+            font-size: 13px;
+            margin-bottom: 6px;
         }
 
         .review-text {
-            font-size: 13px;
+            font-size: 12px;
             color: #475569;
             font-style: italic;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             line-height: 1.4;
         }
 
         .review-author {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: #0f172a;
         }
 
         /* Bloco de Informações Rápidas */
         .info-card {
-            margin-top: 24px;
+            margin-top: 20px;
             background: #f8fafc;
-            border-radius: 20px;
-            padding: 16px;
-            font-size: 13px;
+            border-radius: 16px;
+            padding: 14px;
+            font-size: 12px;
             color: #475569;
             text-align: left;
             border: 1px solid #e2e8f0;
@@ -282,8 +289,8 @@
         .info-item {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 10px;
+            gap: 8px;
+            margin-bottom: 8px;
         }
 
         .info-item:last-child {
@@ -292,20 +299,25 @@
 
         .info-item i {
             color: #f97316;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
         /* Rodapé */
         .footer {
-            margin-top: 24px;
-            padding-top: 16px;
+            margin-top: 20px;
+            padding-top: 14px;
             border-top: 1px solid #f1f5f9;
-            font-size: 12px;
+            font-size: 11px;
             color: #94a3b8;
         }
     </style>
 </head>
 <body>
+
+    <!-- Banner para saídas do Instagram (Apenas iPhone) -->
+    <div id="ig-browser-banner">
+        ⚠️ <strong>Para uma melhor experiência:</strong> toque nos <strong>3 pontos (•••)</strong> no canto superior direito e selecione <strong>"Abrir no navegador"</strong>.
+    </div>
 
     <div class="container">
         <!-- Logótipo Oficial -->
@@ -319,11 +331,11 @@
         <span class="badge-petshop">Petshop</span>
         <p class="slogan">"Tudo o que o seu melhor amigo precisa, num só lugar!"</p>
 
-        <!-- Links Principais (Todos Abertura Direta) -->
+        <!-- Links Principais (Abertura Direta Sem Separadores Intermédios) -->
         <div class="links-grid">
             <a href="tel:961112056" class="btn-link btn-phone">
                 <div class="btn-content">
-                    <i class="fa-solid fa-phone fa-xl"></i>
+                    <i class="fa-solid fa-phone fa-lg"></i>
                     <span>Ligar por telefone</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
@@ -331,7 +343,7 @@
 
             <a href="whatsapp://send?phone=351961112056" class="btn-link btn-whatsapp">
                 <div class="btn-content">
-                    <i class="fa-brands fa-whatsapp fa-xl"></i>
+                    <i class="fa-brands fa-whatsapp fa-lg"></i>
                     <span>Mensagem WhatsApp</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
@@ -341,7 +353,7 @@
 
             <a href="https://maps.app.goo.gl/FLBvxBZRebUCZdQp7" class="btn-link btn-gps">
                 <div class="btn-content">
-                    <i class="fa-solid fa-location-dot fa-xl"></i>
+                    <i class="fa-solid fa-location-dot fa-lg"></i>
                     <span>Ver Direções (Google Maps)</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
@@ -351,7 +363,7 @@
 
             <a href="https://www.instagram.com/pata.brilhante/" class="btn-link btn-instagram">
                 <div class="btn-content">
-                    <i class="fa-brands fa-instagram fa-xl"></i>
+                    <i class="fa-brands fa-instagram fa-lg"></i>
                     <span>Página do Instagram</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
@@ -359,7 +371,7 @@
 
             <a href="https://www.facebook.com/share/19FGqEpSVN/" class="btn-link btn-facebook">
                 <div class="btn-content">
-                    <i class="fa-brands fa-facebook fa-xl"></i>
+                    <i class="fa-brands fa-facebook fa-lg"></i>
                     <span>Página do Facebook</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
@@ -369,7 +381,7 @@
 
             <a href="https://g.page/r/CeD5w986wA-zEBM/review" class="btn-link btn-google-review">
                 <div class="btn-content">
-                    <i class="fa-solid fa-star fa-xl"></i>
+                    <i class="fa-solid fa-star fa-lg"></i>
                     <span>Deixar Avaliação no Google</span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
@@ -476,5 +488,38 @@
         </div>
     </div>
 
+    <!-- Script Nativo para redirecionar do Navegador do Instagram -->
+    <script>
+    (function() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      var isInstagram = /Instagram|FBAN|FBAV/i.test(ua);
+
+      if (isInstagram) {
+        var isAndroid = /android/i.test(ua);
+        var isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+        if (isAndroid) {
+          // Força a abertura no Chrome do Android
+          var cleanUrl = window.location.href.replace(/^https?:\/\//, '');
+          window.location.href = "intent://" + cleanUrl + "#Intent;scheme=https;action=android.intent.action.VIEW;end;";
+        } else if (isIOS) {
+          // No iPhone mostra a barra de instrução
+          var showBanner = function() {
+            var banner = document.getElementById("ig-browser-banner");
+            if (banner) {
+              banner.style.display = "block";
+              document.body.style.paddingTop = (banner.offsetHeight || 50) + "px";
+            }
+          };
+
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", showBanner);
+          } else {
+            showBanner();
+          }
+        }
+      }
+    })();
+    </script>
 </body>
 </html>
