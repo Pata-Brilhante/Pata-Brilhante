@@ -1,2 +1,485 @@
 # Pata-Brilhante
 Pet Shot e Serviços 
+
+
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pata Brilhante - Petshop em Joane</title>
+    <!-- Meta tags para redes sociais -->
+    <meta property="og:title" content="Pata Brilhante - Petshop">
+    <meta property="og:description" content="Tudo o que o seu melhor amigo precisa, num só lugar! Banhos, tosquias, rações, entregas e Pet Táxi em Joane.">
+    <meta property="og:type" content="website">
+    
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(180deg, #e0f2fe 0%, #f1f5f9 100%);
+            color: #0f172a;
+            display: flex;
+            justify-content: center;
+            padding: 24px 12px;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 440px;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.15);
+            padding: 28px 22px;
+            text-align: center;
+        }
+
+        /* Logótipo */
+        .logo-wrapper {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 16px auto;
+        }
+
+        .logo-container {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #ffffff;
+            padding: 5px;
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
+            border: 3px solid #38bdf8;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.03);
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Títulos e Slogan */
+        .brand-title {
+            color: #0369a1;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .badge-petshop {
+            display: inline-block;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            color: #ffffff;
+            padding: 5px 18px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+        }
+
+        .slogan {
+            font-size: 14px;
+            color: #0284c7;
+            margin: 16px 0 24px 0;
+            font-style: italic;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Botões de Ação */
+        .links-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            border-radius: 18px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .btn-link:active {
+            transform: scale(0.98);
+        }
+
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn-phone { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
+        .btn-whatsapp { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
+        .btn-gps { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+        .btn-instagram { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-facebook { background: linear-gradient(135deg, #1877F2 0%, #0b5ed7 100%); }
+        .btn-google-review { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+
+        /* Divisores Visuais */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+            margin: 4px 0;
+        }
+
+        /* Títulos de Secção */
+        .section-title {
+            font-size: 18px;
+            color: #0369a1;
+            margin: 24px 0 16px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 800;
+        }
+
+        /* Cartões de Serviços */
+        .services-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .service-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 14px 16px;
+            transition: border-color 0.2s ease;
+        }
+
+        .service-card:hover {
+            border-color: #7dd3fc;
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #0284c7;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .service-header i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .service-desc {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+            padding-left: 30px;
+        }
+
+        .route-flow {
+            display: inline-block;
+            margin-top: 10px;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        /* Destaque de Animais Atendidos */
+        .animals-box {
+            margin-top: 24px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px dashed #38bdf8;
+            padding: 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            color: #0369a1;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        /* Cartões de Avaliações */
+        .reviews-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .review-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 16px;
+            text-align: left;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .review-text {
+            font-size: 13px;
+            color: #475569;
+            font-style: italic;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .review-author {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        /* Bloco de Informações Rápidas */
+        .info-card {
+            margin-top: 24px;
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 16px;
+            font-size: 13px;
+            color: #475569;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item i {
+            color: #f97316;
+            margin-top: 3px;
+        }
+
+        /* Rodapé */
+        .footer {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #f1f5f9;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logótipo Oficial -->
+        <div class="logo-wrapper">
+            <div class="logo-container">
+                <img class="logo-img" src="Screenshot_2026-09-04-09-46-03-398_com.canva.editor.jpg" alt="Pata Brilhante Petshop">
+            </div>
+        </div>
+
+        <h1 class="brand-title">Pata Brilhante</h1>
+        <span class="badge-petshop">Petshop</span>
+        <p class="slogan">"Tudo o que o seu melhor amigo precisa, num só lugar!"</p>
+
+        <!-- Links Principais (Todos Abertura Direta) -->
+        <div class="links-grid">
+            <a href="tel:961112056" class="btn-link btn-phone">
+                <div class="btn-content">
+                    <i class="fa-solid fa-phone fa-xl"></i>
+                    <span>Ligar por telefone</span>
+                </div>
+                <i class="fa-solid fa-chevron-right fa-sm"></i>
+            </a>
+
+            <a href="whatsapp://send?phone=351961112056" class="btn-link btn-whatsapp">
+                <div class="btn-content">
+                    <i class="fa-brands fa-whatsapp fa-xl"></i>
+                    <span>Mensagem WhatsApp</span>
+                </div>
+                <i class="fa-solid fa-chevron-right fa-sm"></i>
+            </a>
+
+            <div class="divider"></div>
+
+            <a href="https://maps.app.goo.gl/FLBvxBZRebUCZdQp7" class="btn-link btn-gps">
+                <div class="btn-content">
+                    <i class="fa-solid fa-location-dot fa-xl"></i>
+                    <span>Ver Direções (Google Maps)</span>
+                </div>
+                <i class="fa-solid fa-chevron-right fa-sm"></i>
+            </a>
+
+            <div class="divider"></div>
+
+            <a href="https://www.instagram.com/pata.brilhante/" class="btn-link btn-instagram">
+                <div class="btn-content">
+                    <i class="fa-brands fa-instagram fa-xl"></i>
+                    <span>Página do Instagram</span>
+                </div>
+                <i class="fa-solid fa-chevron-right fa-sm"></i>
+            </a>
+
+            <a href="https://www.facebook.com/share/19FGqEpSVN/" class="btn-link btn-facebook">
+                <div class="btn-content">
+                    <i class="fa-brands fa-facebook fa-xl"></i>
+                    <span>Página do Facebook</span>
+                </div>
+                <i class="fa-solid fa-chevron-right fa-sm"></i>
+            </a>
+
+            <div class="divider"></div>
+
+            <a href="https://g.page/r/CeD5w986wA-zEBM/review" class="btn-link btn-google-review">
+                <div class="btn-content">
+                    <i class="fa-solid fa-star fa-xl"></i>
+                    <span>Deixar Avaliação no Google</span>
+                </div>
+                <i class="fa-solid fa-chevron-right fa-sm"></i>
+            </a>
+        </div>
+
+        <!-- Os Nossos Serviços -->
+        <div class="section-title">
+            <i class="fa-solid fa-paw"></i> Os Nossos Serviços
+        </div>
+
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-header">
+                    <i class="fa-solid fa-shower"></i>
+                    <span>Banhos e Tosquias</span>
+                </div>
+                <div class="service-desc">
+                    Higiene, cuidado e estética para o seu animal, com todo o conforto e dedicação.
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <i class="fa-solid fa-car"></i>
+                    <span>Pet Táxi</span>
+                </div>
+                <div class="service-desc">
+                    Recolhemos o seu animal em casa, levamo-lo à loja para o serviço e entregamo-lo novamente em casa.
+                    <div class="route-flow">Casa &rarr; Loja &rarr; Serviço &rarr; Casa</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <span>Entregas ao Domicílio</span>
+                </div>
+                <div class="service-desc">
+                    Encomende os seus produtos e receba-os comodamente em casa.
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    <span>Rações e Acessórios</span>
+                </div>
+                <div class="service-desc">
+                    Rações, brinquedos, acessórios e produtos para o bem-estar do seu animal.
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista de Animais Atendidos -->
+        <div class="animals-box">
+            🐶 Cães • 🐱 Gatos • 🐟 Peixes<br>🐢 Tartarugas • 🦜 Aves • 🐹 Roedores
+        </div>
+
+        <!-- Avaliações de Clientes -->
+        <div class="section-title">
+            <i class="fa-solid fa-star"></i> Opiniões dos Clientes
+        </div>
+        
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Serviço 5 estrelas! O meu cão veio super cheiroso e feliz. Nota-se que trabalham com muito amor aos animais."</p>
+                <p class="review-author">- Maria Silva</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"O serviço de Pet Táxi ajudou-me imenso pois não tinha como o levar. Recomendo muito!"</p>
+                <p class="review-author">- João Pedro</p>
+            </div>
+        </div>
+
+        <!-- Informações e Localização -->
+        <div class="info-card">
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <strong>Morada:</strong><br>
+                    Largo Zeca Afonso 147, Loja 7, Joane
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <strong>Email:</strong><br>
+                    patabrilhante.joane@gmail.com
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="footer">
+            <p>© 2026 Pata Brilhante Petshop. Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+</body>
+</html>
