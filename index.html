@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Pata Brilhante - Petshop em Joane</title>
+    <title>Pata Brilhante - Pet Shop & Grooming em Joane</title>
     
     <!-- Meta tags para redes sociais -->
-    <meta property="og:title" content="Pata Brilhante - Petshop">
-    <meta property="og:description" content="Tudo o que o seu melhor amigo precisa, num só lugar! Banhos, tosquias, rações, entregas e Pet Táxi em Joane.">
+    <meta property="og:title" content="Pata Brilhante - Pet Shop & Grooming">
+    <meta property="og:description" content="Tudo o que o seu melhor amigo precisa, num lugar só! Banhos, tosquias, rações, entregas e Pet Táxi em Joane.">
     <meta property="og:type" content="website">
     
     <!-- FontAwesome para ícones -->
@@ -32,7 +32,7 @@
             min-height: 100dvh;
         }
 
-        /* Banner para utilizadores do Instagram no iPhone */
+        /* Banner de aviso para utilizadores do Instagram no iPhone */
         #ig-browser-banner {
             display: none;
             position: fixed;
@@ -88,24 +88,24 @@
             border-radius: 50%;
         }
 
-        /* Títulos e Slogan */
+        /* Títulos, HUD/Badge e Slogan */
         .brand-title {
             color: #0369a1;
             font-size: 26px;
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .badge-petshop {
             display: inline-block;
             background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
             color: #ffffff;
-            padding: 4px 16px;
+            padding: 5px 18px;
             border-radius: 20px;
             font-size: 11px;
             font-weight: 800;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
             box-shadow: 0 4px 10px rgba(249, 115, 22, 0.25);
         }
@@ -314,7 +314,7 @@
 </head>
 <body>
 
-    <!-- Banner para saídas do Instagram (Apenas iPhone) -->
+    <!-- Banner de aviso para utilizadores do Instagram (iPhone) -->
     <div id="ig-browser-banner">
         ⚠️ <strong>Para uma melhor experiência:</strong> toque nos <strong>3 pontos (•••)</strong> no canto superior direito e selecione <strong>"Abrir no navegador"</strong>.
     </div>
@@ -323,15 +323,16 @@
         <!-- Logótipo Oficial -->
         <div class="logo-wrapper">
             <div class="logo-container">
-                <img class="logo-img" src="Screenshot_2026-09-04-09-46-03-398_com.canva.editor.jpg" alt="Pata Brilhante Petshop">
+                <img class="logo-img" src="Screenshot_2026-09-04-09-46-03-398_com.canva.editor.jpg" alt="Pata Brilhante Pet Shop e Grooming">
             </div>
         </div>
 
+        <!-- Nome, HUD/Badge e Mensagem -->
         <h1 class="brand-title">Pata Brilhante</h1>
-        <span class="badge-petshop">Petshop</span>
-        <p class="slogan">"Tudo o que o seu melhor amigo precisa, num só lugar!"</p>
+        <span class="badge-petshop">Pet Shop &amp; Grooming</span>
+        <p class="slogan">"Tudo o que o seu melhor amigo precisa, num lugar só!"</p>
 
-        <!-- Links Principais (Abertura Direta Sem Separadores Intermédios) -->
+        <!-- Links Principais -->
         <div class="links-grid">
             <a href="tel:961112056" class="btn-link btn-phone">
                 <div class="btn-content">
@@ -397,7 +398,7 @@
             <div class="service-card">
                 <div class="service-header">
                     <i class="fa-solid fa-shower"></i>
-                    <span>Banhos e Tosquias</span>
+                    <span>Banhos e Tosquias (Grooming)</span>
                 </div>
                 <div class="service-desc">
                     Higiene, cuidado e estética para o seu animal, com todo o conforto e dedicação.
@@ -499,11 +500,9 @@
         var isIOS = /iPhone|iPad|iPod/i.test(ua);
 
         if (isAndroid) {
-          // Força a abertura no Chrome do Android
           var cleanUrl = window.location.href.replace(/^https?:\/\//, '');
           window.location.href = "intent://" + cleanUrl + "#Intent;scheme=https;action=android.intent.action.VIEW;end;";
         } else if (isIOS) {
-          // No iPhone mostra a barra de instrução
           var showBanner = function() {
             var banner = document.getElementById("ig-browser-banner");
             if (banner) {
