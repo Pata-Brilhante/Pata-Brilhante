@@ -32,7 +32,7 @@
             min-height: 100dvh;
         }
 
-        /* Banner de aviso para utilizadores do Instagram no iPhone */
+        /* Banner de aviso para o Instagram (iPhone) */
         #ig-browser-banner {
             display: none;
             position: fixed;
@@ -85,10 +85,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 50%;
         }
 
-        /* Títulos, HUD/Badge e Slogan */
+        /* Títulos, Badge e Slogan */
         .brand-title {
             color: #0369a1;
             font-size: 26px;
@@ -158,7 +157,6 @@
         .btn-facebook { background: linear-gradient(135deg, #1877F2 0%, #0b5ed7 100%); }
         .btn-google-review { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
 
-        /* Divisores Visuais */
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
@@ -177,21 +175,36 @@
             font-weight: 800;
         }
 
-        /* Cartões de Serviços */
-        .services-container {
+        /* Contentores e Cartões Base */
+        .services-container, .reviews-container {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            text-align: left;
         }
 
-        .service-card {
+        .service-card, .review-card, .info-card {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 14px;
             padding: 12px 14px;
+            text-align: left;
         }
 
+        .review-card {
+            background: #ffffff;
+            padding: 14px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+
+        .info-card {
+            margin-top: 20px;
+            border-radius: 16px;
+            padding: 14px;
+            font-size: 12px;
+            color: #475569;
+        }
+
+        /* Detalhes dos Serviços */
         .service-header {
             display: flex;
             align-items: center;
@@ -225,7 +238,7 @@
             font-weight: 700;
         }
 
-        /* Destaque de Animais Atendidos */
+        /* Animais Atendidos */
         .animals-box {
             margin-top: 20px;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
@@ -238,22 +251,7 @@
             line-height: 1.5;
         }
 
-        /* Cartões de Avaliações */
-        .reviews-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .review-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 14px;
-            text-align: left;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-        }
-
+        /* Avaliações */
         .stars {
             color: #fbbf24;
             font-size: 13px;
@@ -274,18 +272,7 @@
             color: #0f172a;
         }
 
-        /* Bloco de Informações Rápidas */
-        .info-card {
-            margin-top: 20px;
-            background: #f8fafc;
-            border-radius: 16px;
-            padding: 14px;
-            font-size: 12px;
-            color: #475569;
-            text-align: left;
-            border: 1px solid #e2e8f0;
-        }
-
+        /* Informações Rápidas */
         .info-item {
             display: flex;
             align-items: flex-start;
@@ -314,7 +301,7 @@
 </head>
 <body>
 
-    <!-- Banner de aviso para utilizadores do Instagram (iPhone) -->
+    <!-- Banner de aviso para o Instagram (iPhone) -->
     <div id="ig-browser-banner">
         ⚠️ <strong>Para uma melhor experiência:</strong> toque nos <strong>3 pontos (•••)</strong> no canto superior direito e selecione <strong>"Abrir no navegador"</strong>.
     </div>
@@ -327,7 +314,7 @@
             </div>
         </div>
 
-        <!-- Nome, HUD/Badge e Mensagem -->
+        <!-- Nome, Badge e Slogan -->
         <h1 class="brand-title">Pata Brilhante</h1>
         <span class="badge-petshop">Pet Shop &amp; Grooming</span>
         <p class="slogan">"Tudo o que o seu melhor amigo precisa, num lugar só!"</p>
@@ -342,7 +329,7 @@
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
 
-            <a href="whatsapp://send?phone=351961112056" class="btn-link btn-whatsapp">
+            <a href="https://wa.me/351961112056" class="btn-link btn-whatsapp">
                 <div class="btn-content">
                     <i class="fa-brands fa-whatsapp fa-lg"></i>
                     <span>Mensagem WhatsApp</span>
@@ -418,21 +405,21 @@
 
             <div class="service-card">
                 <div class="service-header">
-                    <i class="fa-solid fa-house-chimney"></i>
-                    <span>Entregas ao Domicílio</span>
+                    <i class="fa-solid fa-bowl-food"></i>
+                    <span>Produtos para o seu patudo (Pet Shop)</span>
                 </div>
                 <div class="service-desc">
-                    Encomende os seus produtos e receba-os comodamente em casa.
+                    Rações, brinquedos, acessórios e produtos para o bem-estar do seu animal.
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-header">
-                    <i class="fa-solid fa-bowl-food"></i>
-                    <span>Rações e Acessórios</span>
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <span>Entrega ao Domicílio</span>
                 </div>
                 <div class="service-desc">
-                    Rações, brinquedos, acessórios e produtos para o bem-estar do seu animal.
+                    Encomende os seus produtos e receba-os comodamente em casa.
                 </div>
             </div>
         </div>
@@ -489,7 +476,7 @@
         </div>
     </div>
 
-    <!-- Script Nativo para redirecionar do Navegador do Instagram -->
+    <!-- Script para redirecionar do Navegador do Instagram -->
     <script>
     (function() {
       var ua = navigator.userAgent || navigator.vendor || window.opera;
