@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Pata Brilhante - Pet Shop & Grooming</title>
+    <title>Pata Brilhante - Pet Shop & Grooming em Joane</title>
     
     <!-- Meta tags para redes sociais -->
     <meta property="og:title" content="Pata Brilhante - Pet Shop & Grooming">
@@ -64,9 +64,10 @@
             box-shadow: 0 15px 35px -10px rgba(2, 132, 199, 0.15);
             padding: 24px 18px;
             text-align: center;
+            transition: max-width 0.3s ease;
         }
 
-        /* Logótipo Sem Moldura Circular */
+        /* Logótipo */
         .logo-wrapper {
             width: 140px;
             margin: 0 auto 14px auto;
@@ -133,7 +134,12 @@
             font-weight: 700;
             font-size: 14px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.15s ease;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         .btn-link:active {
@@ -144,6 +150,13 @@
             display: flex;
             align-items: center;
             gap: 12px;
+        }
+
+        .phone-subtext {
+            font-size: 11px;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-left: 4px;
         }
 
         .btn-phone { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
@@ -159,7 +172,6 @@
             margin: 2px 0;
         }
 
-        /* Linha Separadora de Destaque */
         .divider-strong {
             height: 2px;
             background: linear-gradient(90deg, transparent, #0284c7, transparent);
@@ -320,6 +332,40 @@
             color: #94a3b8;
             text-align: center;
         }
+
+        /* Layout em Grelha para Computador / Tablet */
+        @media (min-width: 768px) {
+            body {
+                padding: 40px 20px;
+            }
+
+            .container {
+                max-width: 720px;
+                padding: 36px 32px;
+            }
+
+            .brand-title {
+                font-size: 32px;
+            }
+
+            .logo-wrapper {
+                width: 160px;
+            }
+
+            .logo-img {
+                max-height: 160px;
+            }
+
+            .links-grid, .services-container, .reviews-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .divider {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -342,15 +388,15 @@
 
         <!-- Links Principais -->
         <div class="links-grid">
-            <a href="tel:961112056" class="btn-link btn-phone">
+            <a href="tel:961112056" class="btn-link btn-phone" title="Ligar para 961 112 056">
                 <div class="btn-content">
                     <i class="fa-solid fa-phone fa-lg"></i>
-                    <span>Ligar Agora</span>
+                    <span>Ligar Agora <span class="phone-subtext">(961 112 056)</span></span>
                 </div>
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
 
-            <a href="https://wa.me/351961112056" class="btn-link btn-whatsapp">
+            <a href="https://wa.me/351961112056" class="btn-link btn-whatsapp" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i class="fa-brands fa-whatsapp fa-lg"></i>
                     <span>Falar pelo WhatsApp</span>
@@ -360,7 +406,7 @@
 
             <div class="divider"></div>
 
-            <a href="https://maps.app.goo.gl/FLBvxBZRebUCZdQp7" class="btn-link btn-gps">
+            <a href="https://maps.app.goo.gl/FLBvxBZRebUCZdQp7" class="btn-link btn-gps" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i class="fa-solid fa-location-dot fa-lg"></i>
                     <span>Ver Direções (Google Maps)</span>
@@ -370,7 +416,7 @@
 
             <div class="divider"></div>
 
-            <a href="https://www.instagram.com/pata.brilhante/" class="btn-link btn-instagram">
+            <a href="https://www.instagram.com/pata.brilhante/" class="btn-link btn-instagram" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i class="fa-brands fa-instagram fa-lg"></i>
                     <span>Página do Instagram</span>
@@ -378,7 +424,7 @@
                 <i class="fa-solid fa-chevron-right fa-sm"></i>
             </a>
 
-            <a href="https://www.facebook.com/share/19FGqEpSVN/" class="btn-link btn-facebook">
+            <a href="https://www.facebook.com/share/19FGqEpSVN/" class="btn-link btn-facebook" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i class="fa-brands fa-facebook fa-lg"></i>
                     <span>Página do Facebook</span>
@@ -388,7 +434,7 @@
 
             <div class="divider"></div>
 
-            <a href="https://g.page/r/CeD5w986wA-zEBM/review" class="btn-link btn-google-review">
+            <a href="https://g.page/r/CeD5w986wA-zEBM/review" class="btn-link btn-google-review" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i class="fa-solid fa-star fa-lg"></i>
                     <span>Avalia-nos no Google</span>
