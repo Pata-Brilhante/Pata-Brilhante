@@ -232,6 +232,23 @@
             text-align: center;
         }
 
+        /* Reprodutor de Vídeo Responsivo */
+        .video-card {
+            margin: 14px 0 20px 0;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #000000;
+            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.15);
+            border: 1px solid #e2e8f0;
+        }
+
+        .video-player {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 18px;
+        }
+
         /* Animais Atendidos */
         .animals-box {
             margin-top: 20px;
@@ -418,6 +435,17 @@
                     Encomende os seus produtos e receba-os comodamente em casa.
                 </div>
             </div>
+        </div>
+
+        <!-- Secção do Vídeo de Apresentação (Abaixo dos Serviços) -->
+        <div class="section-title">
+            <i class="fa-solid fa-circle-play"></i> Conheça a Nossa Loja
+        </div>
+        <div class="video-card">
+            <video class="video-player" controls playsinline preload="metadata">
+                <source src="VID-20261028-WA0000.mp4" type="video/mp4">
+                O seu navegador não suporta a reprodução deste vídeo.
+            </video>
         </div>
 
         <!-- Lista de Animais Atendidos -->
